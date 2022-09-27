@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class JavaExample {
+
+    public static void main(String[] args) {
+
+    	double a, b;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter first number:");
+
+        /* We are using data type double so that user
+         * can enter integer as well as floating point
+         * value
+         */
+        a = scanner.nextDouble();
+        System.out.print("Enter second number:");
+        b = scanner.nextDouble();
+
+        System.out.println("Enter an operation (Add/Subtract/Multiply/Divide): ");
+        String operation = scanner.next();
+
+        scanner.close();
+        double output;
+
+        switch(operation)
+        {
+            case "Add":
+            	output = a + b;
+                break;
+
+            case "Subtract":
+            	output = a - b;
+                break;
+
+            case "Multiply":
+            	output = a * b;
+                break;
+
+            case "Divide":
+            	output = a / b;
+                break;
+
+            /* If user enters any other operator or char apart from
+             * +, -, * and /, then display an error message to user
+             * 
+             */
+            default:
+                System.out.printf("You have entered wrong Operation String");
+                return;
+        }
+
+        System.out.println("Output is : "+output);
+    }
+}
